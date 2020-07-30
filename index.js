@@ -4,9 +4,9 @@ const swagger = require('./config/swagger');
 const mongoose = require('mongoose');
 const routes = require('./routes');
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config();    // parses the .env entries to a json format
 
-
+// URL for database connection
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
 
 // Connect to DB
@@ -24,7 +24,7 @@ fastify.register(require('fastify-swagger'), swagger.options);
 
 // Register Fastify CORS
 fastify.register(require('fastify-cors'), {
-    origin: true
+    origin: true    // enables 'Access-Control-Allow-Origin'
 })
 
 // Initialise the routes

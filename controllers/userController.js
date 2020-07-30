@@ -12,6 +12,11 @@ exports.getUsers = async (req, reply) => {
 }
 
 // get single user
+/**
+ * testing
+ * @param {*} req 
+ * @param {*} reply 
+ */
 exports.getSingleUser = async (req, reply) => {
     try {
         const id = req.params.id;
