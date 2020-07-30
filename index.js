@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config();    // parses the .env entries to a json format
 
 // URL for database connection
-const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
 
 // Connect to DB
 mongoose.connect(url, { useNewUrlParser: true })
