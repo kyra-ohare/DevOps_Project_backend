@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloyou-backend-pod # this will be the pod name
+  labels:
+    app: helloyoubackend # this will be used later on to expose pods with certain labels to the outer world
+spec:
+  # This is the pod template
+  containers:
+    - name: myhello-project-backend
+      image: kleydocker/myhello_project_backend:1.0
+      ports:
+        - containerPort: 8080
+      command: [echo "Hello, Kubernetes!"']
+  restartPolicy: OnFailure
+  # The pod template ends here
